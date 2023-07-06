@@ -1,70 +1,134 @@
 :root {
   --color1: rgb(0, 231, 255);
   --color2: rgb(255, 0, 231);
-  --back: url(https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg);
-  --charizard1: rgb(144, 251, 255);
-  --charizard2: #5ff2fd;
-  --charizardfront: url('../../public/cards/ace_clubs.jpg')
+  --frontColor1A: rgb(144, 251, 255);
+  --frontColor1B: rgb(77, 215, 224);
+  --frontColor2A: rgb(255, 54, 40);
+  --frontColor2B: rgb(206, 25, 61);
+  --frontColor3A: rgb(255, 234, 0);
+  --frontColor3B: rgb(219, 163, 7);
+  --frontColor4A: rgb(255, 0, 221);
+  --frontColor4B: rgb(182, 33, 162);
+  --frontColor5A: rgb(181, 42, 236);
+  --frontColor5B: rgb(74, 9, 128);
+  --frontColor6A: rgb(0, 128, 0);
+  --frontColor6B: rgb(0, 201, 0);
 }
 
 body {
   background-color: #192655;
 }
 
-.card {
-  width: 71.5vw;
-  height: 100vw;
-    // width: clamp(200px, 61vh, 18vw);
-    // height: clamp(280px, 85vh, 25.2vw);
-  @media screen and (min-width: 600px) {
-    // width: 61vh;
-    // height: 85vh;
-    // max-width: 500px;
-    // max-height: 700px;
-    width: clamp(12.9vw, 61vh, 18vw);
-    height: clamp(18vw, 85vh, 25.2vw);
-  }
-  
+.card-container {
   position: relative;
+  width: 22vw;
+  height: 30vw;
+
+  @media screen and (max-width: 420px) {
+    width: 55vw;
+    height: 75vw;
+  }
+
+  .card {
+    position: absolute;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .card-back {
+    transform: rotateY(-180deg);
+    background-image: url('../../public/cards/_deck_back.png');
+  }
+}
+
+.card-container .active-container {
+  .card:not(.card-back) {
+    transform: rotateY(180deg);
+  }
+
+  .card-back {
+    transform: rotateY(0deg);
+  }
+}
+
+.card {
+  width: clamp(12.9vw, 61vh, 18vw);
+  height: clamp(18vw, 85vh, 25.2vw);
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
   overflow: hidden;
-  margin: 20px;
   overflow: hidden;
   z-index: 10;
   touch-action: none;
-  
+
   border-radius: 5% / 3.5%;
-  box-shadow: 
-    -5px -5px 5px -5px var(--color1), 
-    5px 5px 5px -5px var(--color2), 
-    -7px -7px 10px -5px transparent, 
-    7px 7px 10px -5px transparent, 
-    0 0 5px 0px rgba(255,255,255,0),
-    0 55px 35px -20px rgba(0, 0, 0, 0.5);
-  
-  transition: transform 0.5s ease, box-shadow 0.2s ease;
-  will-change: transform, filter;
-  
+  box-shadow: -5px -5px 5px -5px var(--color1),
+  5px 5px 5px -5px var(--color2),
+  -7px -7px 10px -5px transparent,
+  7px 7px 10px -5px transparent,
+  0 0 5px 0px rgba(255, 255, 255, 0),
+  0 55px 35px -20px rgba(0, 0, 0, 0.5);
+
+  transition: transform 0.5s ease,
+  box-shadow 0.2s ease;
+  will-change: transform,
+  filter;
+
   background-color: #040712;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   transform-origin: center;
-  
+
 }
 
 .card:hover {
-  box-shadow: 
-    -20px -20px 30px -25px var(--color1), 
-    20px 20px 30px -25px var(--color2), 
-    -7px -7px 10px -5px var(--color1), 
-    7px 7px 10px -5px var(--color2), 
-    0 0 13px 4px rgba(255,255,255,0.3),
+  box-shadow:
+    -20px -20px 30px -25px var(--color1),
+    20px 20px 30px -25px var(--color2),
+    -7px -7px 10px -5px var(--color1),
+    7px 7px 10px -5px var(--color2),
+    0 0 13px 4px rgba(255, 255, 255, 0.3),
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
 }
 
-.card {
-  --color1: var(--charizard1);
-  --color2: var(--charizard2);
+.card1 {
+  --color1: var(--frontColor1A);
+  --color2: var(--frontColor1B);
+}
+
+.card2 {
+  --color1: var(--frontColor2A);
+  --color2: var(--frontColor2B);
+}
+
+.card3 {
+  --color1: var(--frontColor3A);
+  --color2: var(--frontColor3B);
+}
+
+.card4 {
+  --color1: var(--frontColor4A);
+  --color2: var(--frontColor4B);
+}
+
+.card5 {
+  --color1: var(--frontColor5A);
+  --color2: var(--frontColor5B);
+}
+
+.card6 {
+  --color1: var(--frontColor6A);
+  --color2: var(--frontColor6B);
 }
 
 .card:before,
@@ -84,15 +148,13 @@ body {
 .card:before {
   background-position: 50% 50%;
   background-size: 300% 300%;
-  background-image: linear-gradient(
-    115deg,
-    transparent 0%,
-    var(--color1) 25%,
-    transparent 47%,
-    transparent 53%,
-    var(--color2) 75%,
-    transparent 100%
-  );
+  background-image: linear-gradient(115deg,
+      transparent 0%,
+      var(--color1) 25%,
+      transparent 47%,
+      transparent 53%,
+      var(--color2) 75%,
+      transparent 100%);
   opacity: .5;
   filter: brightness(.5) contrast(1);
   z-index: 1;
@@ -100,8 +162,8 @@ body {
 
 .card:after {
   opacity: 1;
-  background-image: url("https://assets.codepen.io/13471/sparkles.gif"), 
-    url(https://assets.codepen.io/13471/holo.png), 
+  background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
+    url(https://assets.codepen.io/13471/holo.png),
     linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
   background-position: 50% 50%;
   background-size: 160%;
@@ -115,7 +177,8 @@ body {
 
 .card.active:after,
 .card:hover:after {
-  filter: brightness(1) contrast(1);;
+  filter: brightness(1) contrast(1);
+  ;
   opacity: 1;
 }
 
@@ -128,13 +191,11 @@ body {
 .card.active:before,
 .card:hover:before {
   animation: none;
-  background-image: linear-gradient(
-    110deg,
-    transparent 25%,
-    var(--color1) 48%,
-    var(--color2) 52%,
-    transparent 75%
-  );
+  background-image: linear-gradient(110deg,
+      transparent 25%,
+      var(--color1) 48%,
+      var(--color2) 52%,
+      transparent 75%);
   background-position: 50% 50%;
   background-size: 250% 250%;
   opacity: .88;
@@ -150,13 +211,15 @@ body {
   transition: none;
 }
 
-.card.animated {
+.card.animated1 {
   transition: none;
   animation: holoCard 12s ease 0s 1;
-  &:before { 
+
+  &:before {
     transition: none;
     animation: holoGradient 12s ease 0s 1;
   }
+
   &:after {
     transition: none;
     animation: holoSparkle 12s ease 0s 1;
@@ -166,10 +229,42 @@ body {
 .card.animated2 {
   transition: none;
   animation: holoCard2 12s ease 0s 1;
-  &:before { 
+
+  &:before {
     transition: none;
     animation: holoGradient 12s ease 0s 1;
   }
+
+  &:after {
+    transition: none;
+    animation: holoSparkle 12s ease 0s 1;
+  }
+}
+
+.card.animated3 {
+  transition: none;
+  animation: holoCard3 12s ease 0s 1;
+
+  &:before {
+    transition: none;
+    animation: holoGradient 12s ease 0s 1;
+  }
+
+  &:after {
+    transition: none;
+    animation: holoSparkle 12s ease 0s 1;
+  }
+}
+
+.card.animated4 {
+  transition: none;
+  animation: holoCard4 12s ease 0s 1;
+
+  &:before {
+    transition: none;
+    animation: holoGradient 12s ease 0s 1;
+  }
+
   &:after {
     transition: none;
     animation: holoSparkle 12s ease 0s 1;
@@ -180,43 +275,71 @@ body {
 
 
 @keyframes holoSparkle {
-  0%, 100% {
-    opacity: .75; background-position: 50% 50%; filter: brightness(1.2) contrast(1.25);
+
+  0%,
+  100% {
+    opacity: .75;
+    background-position: 50% 50%;
+    filter: brightness(1.2) contrast(1.25);
   }
-  5%, 8% {
-    opacity: 1; background-position: 40% 40%; filter: brightness(.8) contrast(1.2);
+
+  5%,
+  8% {
+    opacity: 1;
+    background-position: 40% 40%;
+    filter: brightness(.8) contrast(1.2);
   }
-  13%, 16% {
-    opacity: .5; background-position: 50% 50%; filter: brightness(1.2) contrast(.8);
+
+  13%,
+  16% {
+    opacity: .5;
+    background-position: 50% 50%;
+    filter: brightness(1.2) contrast(.8);
   }
-  35%, 38% {
-    opacity: 1; background-position: 60% 60%; filter: brightness(1) contrast(1);
+
+  35%,
+  38% {
+    opacity: 1;
+    background-position: 60% 60%;
+    filter: brightness(1) contrast(1);
   }
+
   55% {
-    opacity: .33; background-position: 45% 45%; filter: brightness(1.2) contrast(1.25);
+    opacity: .33;
+    background-position: 45% 45%;
+    filter: brightness(1.2) contrast(1.25);
   }
 }
 
 @keyframes holoGradient {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.5;
     background-position: 50% 50%;
     filter: brightness(.5) contrast(1);
   }
-  5%, 9% {
+
+  5%,
+  9% {
     background-position: 100% 100%;
     opacity: 1;
     filter: brightness(.75) contrast(1.25);
   }
-  13%, 17% {
+
+  13%,
+  17% {
     background-position: 0% 0%;
     opacity: .88;
   }
-  35%, 39% {
+
+  35%,
+  39% {
     background-position: 100% 100%;
     opacity: 1;
     filter: brightness(.5) contrast(1);
   }
+
   55% {
     background-position: 0% 0%;
     opacity: 1;
@@ -225,61 +348,132 @@ body {
 }
 
 @keyframes holoCard {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
   }
-  5%, 8% {
+
+  5%,
+  8% {
     transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
   }
-  13%, 16% {
+
+  13%,
+  16% {
     transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
   }
-  35%, 38% {
+
+  35%,
+  38% {
     transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
   }
+
   55% {
     transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
   }
 }
 
 @keyframes holoCard2 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
   }
-  5%, 8% {
-    transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+
+  5%,
+  8% {
+    transform: rotateZ(0deg) rotateX(6deg) rotateY(-10deg);
   }
-  13%, 16% {
+
+  13%,
+  16% {
     transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
   }
-  35%, 38% {
+
+  35%,
+  38% {
     transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
   }
+
   55% {
     transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+  }
+}
+
+@keyframes holoCard3 {
+
+  0%,
+  100% {
+    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+  }
+
+  5%,
+  8% {
+    transform: rotateZ(-2deg) rotateX(3deg) rotateY(-10deg);
+  }
+
+  13%,
+  16% {
+    transform: rotateZ(-4deg) rotateX(-9deg) rotateY(-16deg);
+  }
+
+  35%,
+  38% {
+    transform: rotateZ(3deg) rotateX(12deg) rotateY(0deg);
+  }
+
+  55% {
+    transform: rotateZ(22deg) rotateX(5deg) rotateY(-33deg);
+  }
+}
+
+@keyframes holoCard4 {
+
+  0%,
+  100% {
+    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+  }
+
+  5%,
+  8% {
+    transform: rotateZ(5deg) rotateX(-5deg) rotateY(-20deg);
+  }
+
+  13%,
+  16% {
+    transform: rotateZ(0deg) rotateX(2deg) rotateY(-8deg);
+  }
+
+  35%,
+  38% {
+    transform: rotateZ(0deg) rotateX(25deg) rotateY(-4deg);
+  }
+
+  55% {
+    transform: rotateZ(0deg) rotateX(-4deg) rotateY(-27deg);
   }
 }
 
 
 
 .card.eevee:hover {
-  box-shadow: 
+  box-shadow:
     0 0 30px -5px white,
     0 0 10px -2px white,
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
 }
+
 .card.eevee:hover:before,
 .card.eevee.active:before {
-  background-image: linear-gradient(
-    115deg,
-    transparent 20%,
-    var(--color1) 36%,
-    var(--color2) 43%,
-    var(--color3) 50%,
-    var(--color4) 57%,
-    var(--color5) 64%,
-    transparent 80%
-  );
+  background-image: linear-gradient(115deg,
+      transparent 20%,
+      var(--color1) 36%,
+      var(--color2) 43%,
+      var(--color3) 50%,
+      var(--color4) 57%,
+      var(--color5) 64%,
+      transparent 80%);
 }
 
 .operator {
@@ -288,38 +482,48 @@ body {
   font-size: 6vh;
 }
 
-
 @media screen and (min-width: 600px) {
   .cards {
     flex-direction: row;
   }
 }
 
+.cards {
+  padding-top: 5vh;
+  .card {
+    &:nth-child(2) {
 
-
-
-
-
-.cards .card {
-  &:nth-child(2) {
-    &, &:before, &:after {
-      animation-delay: 0.25s;
+      &,
+      &:before,
+      &:after {
+        animation-delay: 0.25s;
+      }
     }
-  }
-  &:nth-child(3) {
-    &, &:before, &:after {
-      animation-delay: 0.5s;
+
+    &:nth-child(3) {
+
+      &,
+      &:before,
+      &:after {
+        animation-delay: 0.5s;
+      }
     }
-  }
-  &:nth-child(4) {
-    &, &:before, &:after {
-      animation-delay: 0.75s;
+
+    &:nth-child(4) {
+
+      &,
+      &:before,
+      &:after {
+        animation-delay: 0.75s;
+      }
     }
   }
 }
 
 
-html,body,main {
+html,
+body,
+main {
   min-height: 100%;
 }
 
