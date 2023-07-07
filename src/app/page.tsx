@@ -55,7 +55,12 @@ export default function Home() {
             <div className="card-details__content">
               <Card card={activeCard} selectCard={selectCard} />
               <div className="card-details__content__text">
-                {cardsText[activeCard.cardKey as keyof typeof cardsText]}
+                <div className="card-details__content__text__title">
+                  {cardsText[activeCard.cardKey as keyof typeof cardsText].title}
+                  </div>
+                  <div className="card-details__content__text__description">
+                  {cardsText[activeCard.cardKey as keyof typeof cardsText].description}
+                  </div>
               </div>
             </div>
           </div>

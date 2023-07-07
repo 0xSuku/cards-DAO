@@ -48,8 +48,13 @@ body {
     flex-direction: row;
     gap: 30px;
 
-    .details__content__text {
+    .card-details__content__text {
       flex: 1;
+
+      .card-details__content__text__title {
+        font-weight: 600;
+        font-size: 28px;
+      }
     }
   }
 }
@@ -117,16 +122,16 @@ body {
 
 .grid .card {
   box-shadow: -5px -5px 5px -5px var(--color1),
-  5px 5px 5px -5px var(--color2),
-  -7px -7px 10px -5px transparent,
-  7px 7px 10px -5px transparent,
-  0 0 5px 0px rgba(255, 255, 255, 0),
-  0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    5px 5px 5px -5px var(--color2),
+    -7px -7px 10px -5px transparent,
+    7px 7px 10px -5px transparent,
+    0 0 5px 0px rgba(255, 255, 255, 0),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
 
   transition: transform 0.5s ease,
-  box-shadow 0.2s ease;
+    box-shadow 0.2s ease;
   will-change: transform,
-  filter;  
+    filter;
 }
 
 .grid .card:hover {

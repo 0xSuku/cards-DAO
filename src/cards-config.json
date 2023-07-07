@@ -1,210 +1,210 @@
 {
     "ace_hearts": {
       "title": "Incentive",
-      "text": ""
+      "description": "Incentive text placeholder"
     },
     "two_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "three_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "four_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "five_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "six_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "seven_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "eight_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "nine_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ten_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "jack_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "queen_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "king_hearts": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ace_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "two_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "three_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "four_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "five_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "six_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "seven_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "eight_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "nine_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ten_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "jack_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "queen_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "king_diamonds": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ace_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "two_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "three_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "four_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "five_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "six_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "seven_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "eight_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "nine_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ten_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "jack_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "queen_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "king_clubs": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ace_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "two_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "three_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "four_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "five_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "six_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "seven_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "eight_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "nine_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "ten_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "jack_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "queen_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     },
     "king_spades": {
       "title": "",
-      "text": ""
+      "description": ""
     }
   }
