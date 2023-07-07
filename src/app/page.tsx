@@ -4,6 +4,7 @@ import { CardRanks, CardSuits } from "@/constants/cards";
 import Card from "./components/card";
 import { useState } from "react";
 import './page.scss';
+import cardsText from '../cards-config.json';
 
 interface Card {
   cardKey: string;
@@ -12,7 +13,7 @@ interface Card {
 }
 
 export default function Home() {
-  const [active, setActive] = useState('');
+  const [activeCard, setActiveCard] = useState<Card>();
 
   let cards: Card[] = [];
   (Object.keys(CardSuits) as Array<keyof typeof CardSuits>).forEach((suit) => {
@@ -32,8 +33,7 @@ export default function Home() {
   });
 
   const selectCard = (card: Card) => {
-    debugger;
-    setActive(card.cardKey);
+    setActiveCard((oldCard) => (oldCard?.cardKey === card.cardKey ? undefined : card));
   }
 
   return (
@@ -47,6 +47,20 @@ export default function Home() {
           ))
         }
       </div>
+      {
+        activeCard && (
+          <div className='card-details bg-blend-lighten'>
+            <div className="card-details__background">
+            </div>
+            <div className="card-details__content">
+              <Card card={activeCard} selectCard={selectCard} />
+              <div className="card-details__content__text">
+                {cardsText[activeCard.cardKey as keyof typeof cardsText]}
+              </div>
+            </div>
+          </div>
+        )
+      }
     </main>
   )
 }

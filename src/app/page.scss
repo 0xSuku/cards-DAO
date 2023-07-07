@@ -19,10 +19,46 @@ body {
   background-color: #192655;
 }
 
+.card-details {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  .card-details__background {
+    background-color: rgb(114, 114, 114);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-details__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 40px 60px;
+    padding: 20px;
+    border: black solid 1px;
+    border-radius: 20px;
+    width: calc(100% - 120px);
+    height: calc(100% - 80px);
+    background-color: #7c7c7c;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    .details__content__text {
+      flex: 1;
+    }
+  }
+}
+
 .card-container {
   position: relative;
-  width: 22vw;
-  height: 30vw;
+  width: 18vw;
+  height: 25vw;
+  align-self: center;
 
   @media screen and (max-width: 420px) {
     width: 55vw;
@@ -71,6 +107,15 @@ body {
   touch-action: none;
 
   border-radius: 5% / 3.5%;
+
+  background-color: #040712;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transform-origin: center;
+}
+
+.grid .card {
   box-shadow: -5px -5px 5px -5px var(--color1),
   5px 5px 5px -5px var(--color2),
   -7px -7px 10px -5px transparent,
@@ -81,17 +126,10 @@ body {
   transition: transform 0.5s ease,
   box-shadow 0.2s ease;
   will-change: transform,
-  filter;
-
-  background-color: #040712;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  transform-origin: center;
-
+  filter;  
 }
 
-.card:hover {
+.grid .card:hover {
   box-shadow:
     -20px -20px 30px -25px var(--color1),
     20px 20px 30px -25px var(--color2),
@@ -131,8 +169,8 @@ body {
   --color2: var(--frontColor6B);
 }
 
-.card:before,
-.card:after {
+.grid .card:before,
+.grid .card:after {
   content: "";
   position: absolute;
   left: 0;
@@ -145,7 +183,7 @@ body {
   transition: all .33s ease;
 }
 
-.card:before {
+.grid .card:before {
   background-position: 50% 50%;
   background-size: 300% 300%;
   background-image: linear-gradient(115deg,
@@ -160,7 +198,7 @@ body {
   z-index: 1;
 }
 
-.card:after {
+.grid .card:after {
   opacity: 1;
   background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
     url(https://assets.codepen.io/13471/holo.png),
@@ -175,21 +213,21 @@ body {
   opacity: .75;
 }
 
-.card.active:after,
-.card:hover:after {
+.grid .card.active:after,
+.grid .card:hover:after {
   filter: brightness(1) contrast(1);
   ;
   opacity: 1;
 }
 
-.card.active,
-.card:hover {
+.grid .card.active,
+.grid .card:hover {
   animation: none;
   transition: box-shadow 0.1s ease-out;
 }
 
-.card.active:before,
-.card:hover:before {
+.grid .card.active:before,
+.grid .card:hover:before {
   animation: none;
   background-image: linear-gradient(110deg,
       transparent 25%,
@@ -211,7 +249,7 @@ body {
   transition: none;
 }
 
-.card.animated1 {
+.grid .card.animated1 {
   transition: none;
   animation: holoCard 12s ease 0s 1;
 
@@ -226,7 +264,7 @@ body {
   }
 }
 
-.card.animated2 {
+.grid .card.animated2 {
   transition: none;
   animation: holoCard2 12s ease 0s 1;
 
@@ -241,7 +279,7 @@ body {
   }
 }
 
-.card.animated3 {
+.grid .card.animated3 {
   transition: none;
   animation: holoCard3 12s ease 0s 1;
 
@@ -256,7 +294,7 @@ body {
   }
 }
 
-.card.animated4 {
+.grid .card.animated4 {
   transition: none;
   animation: holoCard4 12s ease 0s 1;
 
@@ -270,8 +308,6 @@ body {
     animation: holoSparkle 12s ease 0s 1;
   }
 }
-
-
 
 
 @keyframes holoSparkle {
@@ -455,27 +491,6 @@ body {
   }
 }
 
-
-
-.card.eevee:hover {
-  box-shadow:
-    0 0 30px -5px white,
-    0 0 10px -2px white,
-    0 55px 35px -20px rgba(0, 0, 0, 0.5);
-}
-
-.card.eevee:hover:before,
-.card.eevee.active:before {
-  background-image: linear-gradient(115deg,
-      transparent 20%,
-      var(--color1) 36%,
-      var(--color2) 43%,
-      var(--color3) 50%,
-      var(--color4) 57%,
-      var(--color5) 64%,
-      transparent 80%);
-}
-
 .operator {
   display: inline-block;
   vertical-align: middle;
@@ -490,6 +505,7 @@ body {
 
 .cards {
   padding-top: 5vh;
+
   .card {
     &:nth-child(2) {
 
