@@ -35,7 +35,7 @@ body {
     display: flex;
 
     flex-direction: row;
-    gap: 30px;
+    gap: 50px;
     padding: 0 80px;
 
     @media screen and (max-width: 420px) {
@@ -45,24 +45,31 @@ body {
 
       .card-details__content__text__title {
         text-align: center;
+        font-size: 24px;
       }
 
       .card-details__content__text__description {
         padding: 10px;
+        font-size: 12px;
       }
     }
 
     .card-details__content__text {
       flex: 1;
       color: white;
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      height: 25.3vw;
+      align-self: center;
 
       .card-details__content__text__title {
         font-family: "Audiowide", cursive;
-        font-size: 24px;
+        font-size: 40px;
       }
 
       .card-details__content__text__description {
-        font-size: 12px;
+        font-size: 20px;
       }
     }
   }
@@ -71,7 +78,7 @@ body {
 .card-container {
   position: relative;
   width: 18vw;
-  height: 25vw;
+  height: 25.3vw;
   align-self: center;
 
   @media screen and (max-width: 420px) {
@@ -134,7 +141,6 @@ body {
   box-shadow: 2px 4px 4px black;
 }
 
-.grid {
 
   .card {
     box-shadow: -5px -5px 5px -5px var(--color1),
@@ -175,6 +181,7 @@ body {
     transition: all .33s ease;
   }
 
+  .grid {
   .card:before {
     background-position: 50% 50%;
     background-size: 300% 300%;
