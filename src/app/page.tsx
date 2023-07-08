@@ -2,7 +2,7 @@
 
 import { CardRanks, CardSuits } from "@/constants/cards";
 import Card from "./components/card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './page.scss';
 import cardsText from '../cards-config.json';
 
@@ -12,6 +12,7 @@ interface Card {
 }
 
 export default function Home() {
+  const [scrollTop, setScrollTop] = useState(0);
   const [activeCard, setActiveCard] = useState<Card>();
 
   let cards: Card[] = [];
@@ -33,8 +34,36 @@ export default function Home() {
     setActiveCard((oldCard) => (oldCard?.cardKey === card.cardKey ? undefined : card));
   }
 
+  const onScroll = () => {
+    // This will calculate how many pixels the page is vertically
+    const winScroll = document.documentElement.scrollTop;
+    // This is responsible for subtracticing the total height of the page - where the users page is scrolled to
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    // This will calculate the final total of the percentage of how much the user has scrolled.
+    const scrolled = (winScroll / height) * 100;
+
+    setScrollTop(scrolled);
+  };
+
+  useEffect(() => {
+    // Fires when the document view has been scrolled
+    window.addEventListener("scroll", onScroll);
+
+    // 
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
+      <div className="progressMainWrapper">
+        <div
+          className="progressMainStyle"
+          style={{ width: `${scrollTop}%` }}
+        ></div>
+      </div>
       <div className="grid max-[420px]:grid-cols-1 grid-cols-3 md:grid-cols-4 max-[420px]:gap-6 gap-8 cards">
         {
           cards.map((card) => (

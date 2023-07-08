@@ -5,12 +5,12 @@
   --color2: #A2A193;
 }
 
-body {
+main {
   background-color: #181818;
 }
 
 .card-details {
-  z-index: 10;
+  z-index: 12;
   position: fixed;
   display: table;
   width: 100%;
@@ -28,7 +28,7 @@ body {
     height: 100%;
 
     .card-details__content {
-      z-index: 12;
+      z-index: 13;
       position: fixed;
       top: 0;
       left: 0;
@@ -633,4 +633,20 @@ main {
   to {
     transform: scale3d(1, 1, 1);
   }
+}
+
+.progressMainWrapper {
+  background-color: black;
+  height: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+}
+
+.progressMainStyle {
+  height: 10px;
+  background-color: #cdab78;
+  width: 15%;
 }
