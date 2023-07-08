@@ -48,15 +48,15 @@ export default function Home() {
         activeCard && (
           <div className='card-details bg-blend-lighten'>
             <div className="card-details__background" onClick={() => selectCard(activeCard)}>
-            </div>
-            <div className="card-details__content">
-              <Card card={activeCard} selectCard={() => { }} />
-              <div className="card-details__content__text">
-                <div className="card-details__content__text__title">
-                  {cardsText[activeCard.cardKey as keyof typeof cardsText].title}
-                </div>
-                <div className="card-details__content__text__description">
-                  {cardsText[activeCard.cardKey as keyof typeof cardsText].description}
+              <div className="card-details__content">
+                <Card card={activeCard} selectCard={() => { }} />
+                <div className="card-details__content__text">
+                  <div className="card-details__content__text__title">
+                    {cardsText[activeCard.cardKey as keyof typeof cardsText].title}
+                  </div>
+                  <div className="card-details__content__text__description">
+                    {cardsText[activeCard.cardKey as keyof typeof cardsText].description}
+                  </div>
                 </div>
               </div>
             </div>

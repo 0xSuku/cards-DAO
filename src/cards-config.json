@@ -1,55 +1,55 @@
 {
     "ace_hearts": {
-      "title": "Incentive",
-      "description": "Incentive text placeholder"
+      "title": "Buyback & Burn",
+      "description": "Tokens are burnt as the protocol generates revenue, thereby reducing its supply and increasing the unit value."
     },
     "two_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Compensation",
+      "description": "Payment or reward provided in exchange for work."
     },
     "three_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Multiple Funding Sources",
+      "description": "Receiving financial support from two or more entities."
     },
     "four_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Time-based Boost",
+      "description": "Stakers accumulate boosts over time which award them more rewards and/or governance rights. They can unstake anytime but then lose their boost. This gives more stake to longer-term participants while giving them the flexibility to exit the system at any time."
     },
     "five_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Token Inflation",
+      "description": "Issuing new supply of a token to incentivize a particular set of behaviors."
     },
     "six_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Peer Audit",
+      "description": "A security evaluation by an actor with similar competencies as the producer."
     },
     "seven_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Mutual Insurance",
+      "description": "A cooperative insurance model where members pool resources to provide coverage against losses."
     },
     "eight_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Liquidity Mining",
+      "description": "Rewarding users who provide liquidity to particular token pools."
     },
     "nine_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Vesting",
+      "description": "A mechanism that gradually releases tokens or other assets over time."
     },
     "ten_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Bounty",
+      "description": "A pre-specified task and reward for anyone who completes a specific task or achieving within a particular ecosystem."
     },
     "jack_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Patronage-based Earnings",
+      "description": "A mechanism where token holders earn rewards in proportion to their usage of a platform or provision of service to the platform."
     },
     "queen_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Token Stream",
+      "description": "Continuous transfer of tokens from a sender's account to a receiver's account. The sender's account balance decreases at a specific rate per second, while the receiver's account balance increases at the same rate. This mechanism allows for smooth, real-time transactions and can be useful in various applications, such as subscription services, payroll systems, and time-based contracts."
     },
     "king_hearts": {
-      "title": "",
-      "description": ""
+      "title": "Penalties",
+      "description": "Punishments imposed for breaking the rules."
     },
     "ace_diamonds": {
       "title": "",

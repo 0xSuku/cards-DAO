@@ -16,7 +16,7 @@ export default function Card(params: { card: Card, selectCard: Function }) {
                 className={`card ${card.animatedClass}`}
                 style={{ backgroundImage: `url('../../cards/${card.cardKey}.jpg')` }}
             />
-            <div className="card card-back" />
+            {/* <div className="card card-back" /> */}
         </div>
     )
 }
