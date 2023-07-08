@@ -9,7 +9,6 @@ import cardsText from '../cards-config.json';
 interface Card {
   cardKey: string;
   animatedClass: string;
-  cardColor: string;
 }
 
 export default function Home() {
@@ -21,12 +20,10 @@ export default function Home() {
       ...(Object.keys(CardRanks) as Array<keyof typeof CardRanks>).map((rank) => {
         const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
         const animatedClass = 'animated' + (Math.floor(Math.random() * (3 - 1 + 1)) + 1);
-        const cardColor = 'card' + (Math.floor(Math.random() * (5 - 1 + 1)) + 1);
 
         return {
           cardKey,
           animatedClass,
-          cardColor
         }
       })
     );
@@ -50,17 +47,17 @@ export default function Home() {
       {
         activeCard && (
           <div className='card-details bg-blend-lighten'>
-            <div className="card-details__background">
+            <div className="card-details__background" onClick={() => selectCard(activeCard)}>
             </div>
             <div className="card-details__content">
-              <Card card={activeCard} selectCard={selectCard} />
+              <Card card={activeCard} selectCard={() => { }} />
               <div className="card-details__content__text">
                 <div className="card-details__content__text__title">
                   {cardsText[activeCard.cardKey as keyof typeof cardsText].title}
-                  </div>
-                  <div className="card-details__content__text__description">
+                </div>
+                <div className="card-details__content__text__description">
                   {cardsText[activeCard.cardKey as keyof typeof cardsText].description}
-                  </div>
+                </div>
               </div>
             </div>
           </div>

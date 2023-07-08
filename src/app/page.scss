@@ -1,22 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
 :root {
-  --color1: rgb(0, 231, 255);
-  --color2: rgb(255, 0, 231);
-  --frontColor1A: rgb(144, 251, 255);
-  --frontColor1B: rgb(77, 215, 224);
-  --frontColor2A: rgb(255, 54, 40);
-  --frontColor2B: rgb(206, 25, 61);
-  --frontColor3A: rgb(255, 234, 0);
-  --frontColor3B: rgb(219, 163, 7);
-  --frontColor4A: rgb(255, 0, 221);
-  --frontColor4B: rgb(182, 33, 162);
-  --frontColor5A: rgb(181, 42, 236);
-  --frontColor5B: rgb(74, 9, 128);
-  --frontColor6A: rgb(0, 128, 0);
-  --frontColor6B: rgb(0, 201, 0);
+  --color1: #DDDCC7;
+  --color2: #A2A193;
 }
 
 body {
-  background-color: #192655;
+  background-color: #181818;
 }
 
 .card-details {
@@ -38,22 +28,41 @@ body {
     top: 0;
     left: 0;
     margin: 40px 60px;
-    padding: 20px;
-    border: black solid 1px;
     border-radius: 20px;
     width: calc(100% - 120px);
     height: calc(100% - 80px);
-    background-color: #7c7c7c;
+    background-color: #000000;
     display: flex;
+
     flex-direction: row;
     gap: 30px;
+    padding: 0 80px;
+
+    @media screen and (max-width: 420px) {
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px 0;
+
+      .card-details__content__text__title {
+        text-align: center;
+      }
+
+      .card-details__content__text__description {
+        padding: 10px;
+      }
+    }
 
     .card-details__content__text {
       flex: 1;
+      color: white;
 
       .card-details__content__text__title {
-        font-weight: 600;
-        font-size: 28px;
+        font-family: "Audiowide", cursive;
+        font-size: 24px;
+      }
+
+      .card-details__content__text__description {
+        font-size: 12px;
       }
     }
   }
@@ -80,7 +89,7 @@ body {
 
   .card-back {
     transform: rotateY(-180deg);
-    background-image: url('../../public/cards/_deck_back.png');
+    background-image: url('../../public/cards/_deck_back.jpg');
   }
 }
 
@@ -120,130 +129,109 @@ body {
   transform-origin: center;
 }
 
-.grid .card {
-  box-shadow: -5px -5px 5px -5px var(--color1),
-    5px 5px 5px -5px var(--color2),
-    -7px -7px 10px -5px transparent,
-    7px 7px 10px -5px transparent,
-    0 0 5px 0px rgba(255, 255, 255, 0),
-    0 55px 35px -20px rgba(0, 0, 0, 0.5);
-
-  transition: transform 0.5s ease,
-    box-shadow 0.2s ease;
-  will-change: transform,
-    filter;
+.card-details__content .card {
+  // box-shadow: 2px 4px 4px #F37242;
+  box-shadow: 2px 4px 4px black;
 }
 
-.grid .card:hover {
-  box-shadow:
-    -20px -20px 30px -25px var(--color1),
-    20px 20px 30px -25px var(--color2),
-    -7px -7px 10px -5px var(--color1),
-    7px 7px 10px -5px var(--color2),
-    0 0 13px 4px rgba(255, 255, 255, 0.3),
-    0 55px 35px -20px rgba(0, 0, 0, 0.5);
-}
+.grid {
 
-.card1 {
-  --color1: var(--frontColor1A);
-  --color2: var(--frontColor1B);
-}
+  .card {
+    box-shadow: -5px -5px 5px -5px var(--color1),
+      5px 5px 5px -5px var(--color2),
+      -7px -7px 10px -5px transparent,
+      7px 7px 10px -5px transparent,
+      0 0 5px 0px rgba(255, 255, 255, 0),
+      0 55px 35px -20px rgba(0, 0, 0, 0.5);
 
-.card2 {
-  --color1: var(--frontColor2A);
-  --color2: var(--frontColor2B);
-}
+    transition: transform 0.5s ease,
+      box-shadow 0.2s ease;
+    will-change: transform,
+      filter;
+  }
 
-.card3 {
-  --color1: var(--frontColor3A);
-  --color2: var(--frontColor3B);
-}
+  .card:hover {
+    box-shadow:
+      -20px -20px 30px -25px var(--color1),
+      20px 20px 30px -25px var(--color2),
+      -7px -7px 10px -5px var(--color1),
+      7px 7px 10px -5px var(--color2),
+      0 0 13px 4px rgba(255, 255, 255, 0.3),
+      0 55px 35px -20px rgba(0, 0, 0, 0.5);
+  }
 
-.card4 {
-  --color1: var(--frontColor4A);
-  --color2: var(--frontColor4B);
-}
 
-.card5 {
-  --color1: var(--frontColor5A);
-  --color2: var(--frontColor5B);
-}
+  .card:before,
+  .card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: .5;
+    mix-blend-mode: color-dodge;
+    transition: all .33s ease;
+  }
 
-.card6 {
-  --color1: var(--frontColor6A);
-  --color2: var(--frontColor6B);
-}
+  .card:before {
+    background-position: 50% 50%;
+    background-size: 300% 300%;
+    background-image: linear-gradient(115deg,
+        transparent 0%,
+        var(--color1) 25%,
+        transparent 47%,
+        transparent 53%,
+        var(--color2) 75%,
+        transparent 100%);
+    opacity: .5;
+    filter: brightness(.5) contrast(1);
+    z-index: 1;
+  }
 
-.grid .card:before,
-.grid .card:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-repeat: no-repeat;
-  opacity: .5;
-  mix-blend-mode: color-dodge;
-  transition: all .33s ease;
-}
+  .card:after {
+    opacity: 1;
+    background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
+      url(https://assets.codepen.io/13471/holo.png),
+      linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+    background-position: 50% 50%;
+    background-size: 160%;
+    background-blend-mode: overlay;
+    z-index: 2;
+    filter: brightness(1) contrast(1);
+    transition: all .33s ease;
+    mix-blend-mode: color-dodge;
+    opacity: .75;
+  }
 
-.grid .card:before {
-  background-position: 50% 50%;
-  background-size: 300% 300%;
-  background-image: linear-gradient(115deg,
-      transparent 0%,
-      var(--color1) 25%,
-      transparent 47%,
-      transparent 53%,
-      var(--color2) 75%,
-      transparent 100%);
-  opacity: .5;
-  filter: brightness(.5) contrast(1);
-  z-index: 1;
-}
+  .card.active:after,
+  .card:hover:after {
+    filter: brightness(1) contrast(1);
+    ;
+    opacity: 1;
+  }
 
-.grid .card:after {
-  opacity: 1;
-  background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
-    url(https://assets.codepen.io/13471/holo.png),
-    linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
-  background-position: 50% 50%;
-  background-size: 160%;
-  background-blend-mode: overlay;
-  z-index: 2;
-  filter: brightness(1) contrast(1);
-  transition: all .33s ease;
-  mix-blend-mode: color-dodge;
-  opacity: .75;
-}
+  .card.active,
+  .card:hover {
+    animation: none;
+    transition: box-shadow 0.1s ease-out;
+  }
 
-.grid .card.active:after,
-.grid .card:hover:after {
-  filter: brightness(1) contrast(1);
-  ;
-  opacity: 1;
-}
-
-.grid .card.active,
-.grid .card:hover {
-  animation: none;
-  transition: box-shadow 0.1s ease-out;
-}
-
-.grid .card.active:before,
-.grid .card:hover:before {
-  animation: none;
-  background-image: linear-gradient(110deg,
-      transparent 25%,
-      var(--color1) 48%,
-      var(--color2) 52%,
-      transparent 75%);
-  background-position: 50% 50%;
-  background-size: 250% 250%;
-  opacity: .88;
-  filter: brightness(.66) contrast(1.33);
-  transition: none;
+  .card.active:before,
+  .card:hover:before {
+    animation: none;
+    background-image: linear-gradient(110deg,
+        transparent 25%,
+        var(--color1) 48%,
+        var(--color2) 52%,
+        transparent 75%);
+    background-position: 50% 50%;
+    background-size: 250% 250%;
+    opacity: .88;
+    filter: brightness(.66) contrast(1.33);
+    transition: none;
+  }
 }
 
 .card.active:before,
@@ -254,66 +242,91 @@ body {
   transition: none;
 }
 
-.grid .card.animated1 {
-  transition: none;
-  animation: holoCard 12s ease 0s 1;
-
-  &:before {
+.grid {
+  .card.animated1 {
     transition: none;
-    animation: holoGradient 12s ease 0s 1;
+
+    @media screen and (min-width: 420px) {
+      &:hover {
+        animation: holoCard 12s ease 0s 1;
+        transform: scale(1.1);
+      }
+    }
+
+    &:before {
+      transition: none;
+      animation: holoGradient 12s ease 0s 1;
+    }
+
+    &:after {
+      transition: none;
+      animation: holoSparkle 12s ease 0s 1;
+    }
   }
 
-  &:after {
+  .card.animated2 {
     transition: none;
-    animation: holoSparkle 12s ease 0s 1;
+
+    @media screen and (min-width: 420px) {
+      &:hover {
+        animation: holoCard2 12s ease 0s 1;
+        transform: scale(1.1);
+      }
+    }
+
+    &:before {
+      transition: none;
+      animation: holoGradient 12s ease 0s 1;
+    }
+
+    &:after {
+      transition: none;
+      animation: holoSparkle 12s ease 0s 1;
+    }
+  }
+
+  .card.animated3 {
+    transition: none;
+
+    @media screen and (min-width: 420px) {
+      &:hover {
+        animation: holoCard3 12s ease 0s 1;
+        transform: scale(1.1);
+      }
+    }
+
+    &:before {
+      transition: none;
+      animation: holoGradient 12s ease 0s 1;
+    }
+
+    &:after {
+      transition: none;
+      animation: holoSparkle 12s ease 0s 1;
+    }
+  }
+
+  .card.animated4 {
+    transition: none;
+
+    @media screen and (min-width: 420px) {
+      &:hover {
+        animation: holoCard4 12s ease 0s 1;
+        transform: scale(1.1);
+      }
+    }
+
+    &:before {
+      transition: none;
+      animation: holoGradient 12s ease 0s 1;
+    }
+
+    &:after {
+      transition: none;
+      animation: holoSparkle 12s ease 0s 1;
+    }
   }
 }
-
-.grid .card.animated2 {
-  transition: none;
-  animation: holoCard2 12s ease 0s 1;
-
-  &:before {
-    transition: none;
-    animation: holoGradient 12s ease 0s 1;
-  }
-
-  &:after {
-    transition: none;
-    animation: holoSparkle 12s ease 0s 1;
-  }
-}
-
-.grid .card.animated3 {
-  transition: none;
-  animation: holoCard3 12s ease 0s 1;
-
-  &:before {
-    transition: none;
-    animation: holoGradient 12s ease 0s 1;
-  }
-
-  &:after {
-    transition: none;
-    animation: holoSparkle 12s ease 0s 1;
-  }
-}
-
-.grid .card.animated4 {
-  transition: none;
-  animation: holoCard4 12s ease 0s 1;
-
-  &:before {
-    transition: none;
-    animation: holoGradient 12s ease 0s 1;
-  }
-
-  &:after {
-    transition: none;
-    animation: holoSparkle 12s ease 0s 1;
-  }
-}
-
 
 @keyframes holoSparkle {
 
