@@ -48,7 +48,7 @@ export default function Home() {
         activeCard && (
           <div className='card-details bg-blend-lighten'>
             <div className="card-details__background" onClick={() => selectCard(activeCard)}>
-              <div className="card-details__content">
+              <div className="card-details__content" onClick={(e) => e.stopPropagation()}>
                 <Card card={activeCard} selectCard={() => { }} />
                 <div className="card-details__content__text">
                   <div className="card-details__content__text__title">
