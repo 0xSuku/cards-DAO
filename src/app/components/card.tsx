@@ -1,3 +1,4 @@
+import './card.scss';
 interface Card {
     cardKey: string;
     animatedClass: string;
