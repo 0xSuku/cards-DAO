@@ -59,8 +59,8 @@ export default function Home() {
       <div className="grid max-[420px]:grid-cols-1 grid-cols-3 md:grid-cols-4 max-[420px]:gap-6 gap-8 cards">
         {
           cards.map((card) => (
-            <div className="grid-card">
-              <Card key={card} cardKey={card} selectCard={selectCard} />
+            <div key={card} className="grid-card">
+              <Card cardKey={card} selectCard={selectCard} />
             </div>
           ))
         }
