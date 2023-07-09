@@ -1,23 +1,29 @@
+import { useState } from 'react';
 import './card.scss';
-interface Card {
-    cardKey: string;
-    animatedClass: string;
-}
 
-export default function Card(params: { card: Card, selectCard: Function }) {
-    const card = params.card;
+export default function Card(params: { cardKey: string, selectCard: Function }) {
+    const [spinIt, setSpinIt] = useState(false);
+    const cardKey = params.cardKey;
 
     const onClick = () => {
-        params.selectCard(card)
+        setSpinIt(true);
+        setTimeout(() => {
+            params.selectCard(cardKey);
+        }, 500);
+        setTimeout(() => {
+            setSpinIt(false);
+        }, 2000);
     }
 
     return (
-        <div className="card-container" onClick={onClick}>
-            <div
-                className={`card ${card.animatedClass}`}
-                style={{ backgroundImage: `url('../../cards/${card.cardKey}.jpg')` }}
-            />
-            {/* <div className="card card-back" /> */}
+        <div className={`card-container ${spinIt ? 'spin' : ''}`} onClick={onClick}>
+            <div className="flipper">
+                <div
+                    className={`card card-front`}
+                    style={{ backgroundImage: `url('../../cards/${cardKey}.jpg')` }}
+                />
+                <div className="card card-back" />
+            </div>
         </div>
     )
 }

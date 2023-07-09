@@ -28,6 +28,7 @@ main {
     height: 100%;
 
     .card-details__content {
+      align-items: center;
       z-index: 13;
       position: fixed;
       top: 40px;
@@ -190,7 +191,23 @@ main {
 }
 
 /* Specifics on the grid cards */
+
+  .grid-card {
+    position: relative;
+    width: 18vw;
+    height: 25.3vw;
+
+    &.gcard {
+      position: fixed;
+    }
+
+    @media screen and (max-width: 420px) {
+      width: 55vw;
+      height: 75vw
+    }
+  }
 .grid {
+
   .card:before {
     background-position: 50% 50%;
     background-size: 300% 300%;
@@ -224,7 +241,6 @@ main {
   .card.active:after,
   .card:hover:after {
     filter: brightness(1) contrast(1);
-    ;
     opacity: 1;
   }
 
@@ -247,90 +263,6 @@ main {
     opacity: .88;
     filter: brightness(.66) contrast(1.33);
     transition: none;
-  }
-
-  .card.animated1 {
-    transition: none;
-
-    @media screen and (min-width: 420px) {
-      &:hover {
-        animation: holoCard 12s ease 0s 1;
-        transform: scale(1.1);
-      }
-    }
-
-    &:before {
-      transition: none;
-      animation: holoGradient 12s ease 0s 1;
-    }
-
-    &:after {
-      transition: none;
-      animation: holoSparkle 12s ease 0s 1;
-    }
-  }
-
-  .card.animated2 {
-    transition: none;
-
-    @media screen and (min-width: 420px) {
-      &:hover {
-        animation: holoCard2 12s ease 0s 1;
-        transform: scale(1.1);
-      }
-    }
-
-    &:before {
-      transition: none;
-      animation: holoGradient 12s ease 0s 1;
-    }
-
-    &:after {
-      transition: none;
-      animation: holoSparkle 12s ease 0s 1;
-    }
-  }
-
-  .card.animated3 {
-    transition: none;
-
-    @media screen and (min-width: 420px) {
-      &:hover {
-        animation: holoCard3 12s ease 0s 1;
-        transform: scale(1.1);
-      }
-    }
-
-    &:before {
-      transition: none;
-      animation: holoGradient 12s ease 0s 1;
-    }
-
-    &:after {
-      transition: none;
-      animation: holoSparkle 12s ease 0s 1;
-    }
-  }
-
-  .card.animated4 {
-    transition: none;
-
-    @media screen and (min-width: 420px) {
-      &:hover {
-        animation: holoCard4 12s ease 0s 1;
-        transform: scale(1.1);
-      }
-    }
-
-    &:before {
-      transition: none;
-      animation: holoGradient 12s ease 0s 1;
-    }
-
-    &:after {
-      transition: none;
-      animation: holoSparkle 12s ease 0s 1;
-    }
   }
 }
 
@@ -412,114 +344,6 @@ main {
     background-position: 0% 0%;
     opacity: 1;
     filter: brightness(.75) contrast(1.25);
-  }
-}
-
-@keyframes holoCard {
-
-  0%,
-  100% {
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-  }
-
-  5%,
-  8% {
-    transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
-  }
-
-  13%,
-  16% {
-    transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
-  }
-
-  35%,
-  38% {
-    transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
-  }
-
-  55% {
-    transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
-  }
-}
-
-@keyframes holoCard2 {
-
-  0%,
-  100% {
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-  }
-
-  5%,
-  8% {
-    transform: rotateZ(0deg) rotateX(6deg) rotateY(-10deg);
-  }
-
-  13%,
-  16% {
-    transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
-  }
-
-  35%,
-  38% {
-    transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
-  }
-
-  55% {
-    transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
-  }
-}
-
-@keyframes holoCard3 {
-
-  0%,
-  100% {
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-  }
-
-  5%,
-  8% {
-    transform: rotateZ(-2deg) rotateX(3deg) rotateY(-10deg);
-  }
-
-  13%,
-  16% {
-    transform: rotateZ(-4deg) rotateX(-9deg) rotateY(-16deg);
-  }
-
-  35%,
-  38% {
-    transform: rotateZ(3deg) rotateX(12deg) rotateY(0deg);
-  }
-
-  55% {
-    transform: rotateZ(22deg) rotateX(5deg) rotateY(-33deg);
-  }
-}
-
-@keyframes holoCard4 {
-
-  0%,
-  100% {
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-  }
-
-  5%,
-  8% {
-    transform: rotateZ(5deg) rotateX(-5deg) rotateY(-20deg);
-  }
-
-  13%,
-  16% {
-    transform: rotateZ(0deg) rotateX(2deg) rotateY(-8deg);
-  }
-
-  35%,
-  38% {
-    transform: rotateZ(0deg) rotateX(25deg) rotateY(-4deg);
-  }
-
-  55% {
-    transform: rotateZ(0deg) rotateX(-4deg) rotateY(-27deg);
   }
 }
 

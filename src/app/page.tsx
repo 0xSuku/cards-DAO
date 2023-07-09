@@ -6,32 +6,24 @@ import { useEffect, useState } from "react";
 import './page.scss';
 import cardsText from '../cards-config.json';
 
-interface Card {
-  cardKey: string;
-  animatedClass: string;
-}
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
-  const [activeCard, setActiveCard] = useState<Card>();
+  const [activeCardKey, setActiveCardKey] = useState<string>();
 
-  let cards: Card[] = [];
+  let cards: string[] = [];
   (Object.keys(CardSuits) as Array<keyof typeof CardSuits>).forEach((suit) => {
     cards.push(
       ...(Object.keys(CardRanks) as Array<keyof typeof CardRanks>).map((rank) => {
         const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
-        const animatedClass = 'animated' + (Math.floor(Math.random() * (3 - 1 + 1)) + 1);
 
-        return {
-          cardKey,
-          animatedClass,
-        }
+        return cardKey;
       })
     );
   });
 
-  const selectCard = (card: Card) => {
-    setActiveCard((oldCard) => (oldCard?.cardKey === card.cardKey ? undefined : card));
+  const selectCard = (card: string) => {
+    setActiveCardKey((oldCard) => (oldCard === card ? undefined : card));
   }
 
   const onScroll = () => {
@@ -67,24 +59,26 @@ export default function Home() {
       <div className="grid max-[420px]:grid-cols-1 grid-cols-3 md:grid-cols-4 max-[420px]:gap-6 gap-8 cards">
         {
           cards.map((card) => (
-            <div key={card.cardKey}>
-              <Card card={card} selectCard={selectCard} />
+            <div className="grid-card">
+              <Card key={card} cardKey={card} selectCard={selectCard} />
             </div>
           ))
         }
       </div>
       {
-        activeCard && (
+        activeCardKey && (
           <div className='card-details bg-blend-lighten'>
-            <div className="card-details__background" onClick={() => selectCard(activeCard)}>
+            <div className="card-details__background" onClick={() => selectCard(activeCardKey)}>
               <div className="card-details__content" onClick={(e) => e.stopPropagation()}>
-                <Card card={activeCard} selectCard={() => { }} />
+                <div className="grid-card">
+                  <Card cardKey={activeCardKey} selectCard={() => { }} />
+                </div>
                 <div className="card-details__content__text">
                   <div className="card-details__content__text__title">
-                    {cardsText[activeCard.cardKey as keyof typeof cardsText].title}
+                    {cardsText[activeCardKey as keyof typeof cardsText].title}
                   </div>
                   <div className="card-details__content__text__description">
-                    {cardsText[activeCard.cardKey as keyof typeof cardsText].description}
+                    {cardsText[activeCardKey as keyof typeof cardsText].description}
                   </div>
                 </div>
               </div>
