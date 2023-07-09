@@ -30,9 +30,8 @@ main {
     .card-details__content {
       z-index: 13;
       position: fixed;
-      top: 0;
-      left: 0;
-      margin: 40px 60px;
+      top: 40px;
+      left: 60px;
       border-radius: 20px;
       width: calc(100% - 120px);
       height: calc(100% - 80px);
@@ -96,6 +95,7 @@ main {
           .card-details__content__text__description {
             padding: 10px;
             font-size: 14px;
+            overflow-y: auto;
           }
         }
       }

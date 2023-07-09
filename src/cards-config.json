@@ -52,159 +52,159 @@
       "description": "Punishments imposed for breaking the rules."
     },
     "ace_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Instant Governance",
+      "description": "Token-holders stake on values for each governance parameter and the resulting value is adjusted in real-time based on the stake-weighted median."
     },
     "two_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Pass/Fail Voting",
+      "description": "A simple binary voting system where participants can only choose between \"yes\" or \"no\"."
     },
     "three_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Approval Voting",
+      "description": "A voting mechanism where voters can select more than one option and the option with the most approvals wins."
     },
     "four_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Wait for Quiet Voting",
+      "description": "Wait until voting has quieted down before closing a vote."
     },
     "five_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Single Choice Voting",
+      "description": "A simple voting system in which participants choose one option from a list of choices."
     },
     "six_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Pairwise Voting",
+      "description": "A budgeting process where options are presented in pairs, and participants choose their preferred option from each pair. The formula distributes funding by computing the preferences over all pairwise comparisons."
     },
     "seven_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Random Jury Arbitration",
+      "description": "A process where a randomly selected group of individuals make a decision on a dispute or issue."
     },
     "eight_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Resistance Voting",
+      "description": "Proposals default to passing unless there is enough resistance. Participants vote against the options they dislike, rather than for the options they prefer."
     },
     "nine_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Osmotic Funding",
+      "description": "Voters signal budgeting preferences by staking tokens on projects. The rate at which each project is funded is determined by the staked amount and the available funds. The rate variations are smoothed over time to avoid high rate variations and offer stability to the projects."
     },
     "ten_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Holographic Consensus",
+      "description": "A governance mechanism that allows for local decisions that represent the interests of a global group."
     },
     "jack_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Rank-choice Voting",
+      "description": "A voting system where participants rank the available options in order of preference."
     },
     "queen_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Conviction Voting",
+      "description": "Proposals are passed based on aggregated continuous preferences of community members. Funds proposals based on the aggregated preference of community members, expressed continuously. In other words, voters are always asserting their preference for which proposals they would like to see approved, rather than casting votes in a single time-boxed session. A member can change their preference at any time, but the longer they keep their preference for the same proposal, the “stronger” their conviction gets. This added conviction gives long-standing community members with consistent preferences more influence than short-term participants merely trying to influence a vote."
     },
     "king_diamonds": {
-      "title": "",
-      "description": ""
+      "title": "Quadratic Voting",
+      "description": "A voting mechanism where participants can allocate a limited number of voting \"points\" to different options, with the number of points allocated being proportional to the square root of the number of points."
     },
     "ace_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Decentralized ID",
+      "description": "Unique identifiers that allow entities to be identified in a verifiable and persistent way without relying on a centralized registry. They can be used to identify entities such as persons, organizations, or Internet of Things (IoT) devices. DIDs form the basis for self-sovereign identity (SSI), a decentralized digital identity model that gives individuals control over their own identity information. Self-sovereign identity allows individuals to control their own identity information and use it to access websites, services, and applications without depending on large identity providers. This prevents fragmentation of online experiences and ensures a secure, streamlined access to services while maintaining control over personal information."
     },
     "two_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Mutual Credit",
+      "description": "Credit that members can issue to each other based on mutual trust, rather than using traditional forms of collateral."
     },
     "three_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Time-bound Funding",
+      "description": "Participants submit proposals within a fixed time period for a fixed amount of capital, which is distributed among top winners based on the voting outcome."
     },
     "four_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Verifiable Credential",
+      "description": "A digital credential that can be used to verify the identity or qualifications of an individual or organization."
     },
     "five_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Soulbound Token",
+      "description": "A token that represents a user's reputation or standing within a community, and cannot be transferred."
     },
     "six_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Batched Auction",
+      "description": "Trading mechanism that groups individual orders together and executes them simultaneously, ensuring fair price discovery. All orders within a batch are settled at the same uniform clearing price. While batch auctions typically operate on a single token pair, multi-dimensional batch auctions allow for orders between multiple token pairs to be settled in the same batch. This is particularly useful for fragmented token spaces, such as USD-stablecoins, or less liquid token pairs, like certain insurance or prediction market outcome tokens. Trades can happen between direct counterparties or in ring formations. Batch auctions offer several benefits: 1. Best Price Discovery: They set the price exactly where supply and demand meet, ensuring a fair price for all participants. 2. Fair and Resistant: They avoid gas wars and other forms of manipulation, with willingness to pay determining final prices and timed batches protecting users from frontrunning. 3. Easy to Use: Bidders can participate by simply determining two parameters (amount and price), while auctioneers can start an auction using the Gnosis Safe App or by running a simple script."
     },
     "seven_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Quorum",
+      "description": "The Minimum level of participation required for a decision to be valid."
     },
     "eight_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Token Gate",
+      "description": "Restricting access to certain services, features or content based on token holdings. This can be used with any variety of tokens (transferable, non-transferable, fungible, non-fungible) and combinations thereof. Additional constraints can also be included, such as the amount of time a token has been held."
     },
     "nine_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Social Graph",
+      "description": "A graphical representation of individuals and their relationships."
     },
     "ten_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Souldbound NFT",
+      "description": "A non-transferable, non-fungible token (NFT), typically used to represent a digital badge or achievement within a particular ecosystem."
     },
     "jack_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Oversight",
+      "description": "Supervision of a process, operation, or work, to ensure it is being done correctly and adheres to the rules."
     },
     "queen_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Oracle",
+      "description": "An information source that provides external data to smart contracts. They bridge the gap between on-chain and off-chain systems, enabling smart contracts to access data from the real world. Since smart contracts are designed to be deterministic and self-executing, they cannot access external data directly. Oracles solve this problem by acting as intermediaries, feeding verified data to smart contracts, which is essential for various use cases like financial services, supply chain management, and prediction markets. Oracles can be classified into several types, including software oracles (accessing online data sources), hardware oracles (interacting with physical devices), and human oracles (relying on human input). They can also be centralized or decentralized, with the latter offering higher levels of trust and security."
     },
     "king_clubs": {
-      "title": "",
-      "description": ""
+      "title": "Time-delay Execution",
+      "description": "A mechanism that imposes a delay on certain actions to prevent spam, fraud or attacks."
     },
     "ace_spades": {
-      "title": "",
-      "description": ""
+      "title": "Fair Ranking",
+      "description": "This is an important adaption of token curated registries. It's goal is simple: Design an economic system for curating information with no single point of failure and no owner, where information which ranks highly is provably valuable to network stakeholders, while protecting against the rich. Whoever stakes the most tokens ranks highest, but the more tokens you stake, the cheaper it is to downvote you. Votes cost tokens, which makes the system sybil resistant. Upvotes stake more tokens in the contract. The cost to downvote is sent directly back to the person being voted on. This allows for an intuitive and simple interface, similar to Reddit, with a transparent economic algorithm that provably benefits the community who uses it."
     },
     "two_spades": {
-      "title": "",
-      "description": ""
+      "title": "NFT Drop",
+      "description": "A method of distributing non-fungible tokens (NFTs) through a random or selective process."
     },
     "three_spades": {
-      "title": "",
-      "description": ""
+      "title": "ve(3,3) Tokenomics",
+      "description": "Variation of the veToken model that provides dilution protection and flexibility to token lockers. How it works: 1. Token emissions are continuously modified based on the percentage of the circulating supply. As more tokens are locked in ve, emissions have a reduced impact. For instance, if 50% of tokens are ve locked, the emission rate would halve. 2. ve lockers' holdings increase proportionally to emissions, preventing dilution. If there is a 5% supply increase due to emissions, ve lockers' holdings are also increased by 5%. 3. ve locks are represented as NFTs, enabling one address to hold multiple locks and trade them on secondary markets. This resolves the capital inefficiency and liquidity concerns associated with ve assets. This is designed to encourage users to lock their tokens, resulting in a more stable environment."
     },
     "four_spades": {
-      "title": "",
-      "description": ""
+      "title": "Merkle Airdrop",
+      "description": "A distribution mechanism where tokens are given away for free to a specific group of people or randomly to anyone who meets certain criteria. Merkle Drops use a cryptographic technique to verify eligibility and allow users to claim their own allocation from the contract."
     },
     "five_spades": {
-      "title": "",
-      "description": ""
+      "title": "Delegation",
+      "description": "Any address can delegate its voting rights to any other address, allowing them to vote on their behalf. Vote delegation can support transitive delegation or be one hop. Vote delegation can also be topic-specific, where an address can delegate its voting rights on different types of decisions to different addresses."
     },
     "six_spades": {
-      "title": "",
-      "description": ""
+      "title": "Prediction Markets",
+      "description": "Allows users to trade on future event outcomes, using market prices to reflect each outcome's probability. Participants stake tokens on their predictions, and markets are resolved when event outcomes are verified."
     },
     "seven_spades": {
-      "title": "",
-      "description": ""
+      "title": "Universal Basic Income",
+      "description": "Provides all participants in a network with a basic income."
     },
     "eight_spades": {
-      "title": "",
-      "description": ""
+      "title": "Blind Bid, Second Price",
+      "description": "An auction where bids are submitted privately, and the winner pays the amount of the second highest bid."
     },
     "nine_spades": {
-      "title": "",
-      "description": ""
+      "title": "Reverse Dutch Auction",
+      "description": "An auction where the price of an asset starts high and gradually decreases over time."
     },
     "ten_spades": {
-      "title": "",
-      "description": ""
+      "title": "Vote Decay",
+      "description": "Voting power decays over time according to certain conditions, like if the holder does not vote."
     },
     "jack_spades": {
-      "title": "",
-      "description": ""
+      "title": "Quadratic Funding",
+      "description": "Quadratic funding is a donation-matching scheme that prioritizes projects based on the number of people who contributed rather than just the amount contributed. The share of the matching pool that each project receives is based on the square root of each contribution. This reduces the power of large donors to influence the matching of funds."
     },
     "queen_spades": {
-      "title": "",
-      "description": ""
+      "title": "Secret Ballot",
+      "description": "A form of voting that allows participants to keep their votes private, providing a layer of anonymity."
     },
     "king_spades": {
-      "title": "",
-      "description": ""
+      "title": "Futarchy",
+      "description": "A governance mechanism where decisions are made based on the outcome of prediction markets."
     }
   }
