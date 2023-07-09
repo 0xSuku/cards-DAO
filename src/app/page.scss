@@ -197,10 +197,6 @@ main {
     width: 18vw;
     height: 25.3vw;
 
-    &.gcard {
-      position: fixed;
-    }
-
     @media screen and (max-width: 420px) {
       width: 55vw;
       height: 75vw
