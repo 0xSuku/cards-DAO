@@ -71,7 +71,7 @@ export default function Home() {
             <div className="card-details__background" onClick={() => selectCard(activeCardKey)}>
               <div className="card-details__content" onClick={(e) => e.stopPropagation()}>
                 <div className="grid-card">
-                  <Card cardKey={activeCardKey} selectCard={() => { }} />
+                  <Card cardKey={activeCardKey} selectCard={() => { }} avoidSpin={true} />
                 </div>
                 <div className="card-details__content__text">
                   <div className="card-details__content__text__title">

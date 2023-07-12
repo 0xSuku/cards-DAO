@@ -5,7 +5,7 @@
     align-self: center;
     transform-style: preserve-3d;
     perspective: 1000;
-    transition: all 1.5s;
+    transition: all 1s;
 
     @media screen and (max-width: 420px) {
         width: 55vw;
@@ -34,11 +34,11 @@
     }
 
     &.spin {
-        transform: scale(1.35);
+        transform: scale(1.25);
         z-index: 1;
 
         .flipper {
-            animation: rotate 1.5s normal linear 1;
+            animation: rotate 1.2s normal linear 0.5;
 
             .card-back {
                 visibility: visible;

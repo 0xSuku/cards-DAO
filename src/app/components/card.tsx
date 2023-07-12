@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import './card.scss';
 
-export default function Card(params: { cardKey: string, selectCard: Function }) {
+export default function Card(params: { cardKey: string, selectCard: Function, avoidSpin?: boolean }) {
     const [spinIt, setSpinIt] = useState(false);
     const cardKey = params.cardKey;
+    const avoidSpin = params.avoidSpin;
 
-    const onClick = () => {
-        setSpinIt(true);
-        setTimeout(() => {
-            params.selectCard(cardKey);
-        }, 500);
-        setTimeout(() => {
-            setSpinIt(false);
-        }, 2000);
+    const onClick = () => {        
+        params.selectCard(cardKey);
+        if (!avoidSpin) {
+            setSpinIt(true);
+            setTimeout(() => {
+                setSpinIt(false);
+            }, 1000);
+        }
     }
 
     return (
