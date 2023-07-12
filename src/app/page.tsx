@@ -42,13 +42,13 @@ export default function Home() {
 
   useEffect(() => {
 
-    
+
     function handleEscapeKey(event: KeyboardEvent) {
       if (event.code === 'Escape') {
         selectCard('');
       }
     }
-  
+
     window.addEventListener("scroll", onScroll);
     window.removeEventListener("scroll", onScroll);
 
@@ -65,7 +65,7 @@ export default function Home() {
           style={{ width: `${scrollTop}%` }}
         ></div>
       </div>
-      <div className="grid max-[420px]:grid-cols-1 grid-cols-3 md:grid-cols-4 max-[420px]:gap-6 gap-8 cards">
+      <div className="grid max-[600px]:grid-cols-1 grid-cols-3 md:grid-cols-4 max-[600px]:gap-6 gap-8 cards">
         {
           cards.map((card) => (
             <div key={card} className="grid-card">
@@ -80,8 +80,8 @@ export default function Home() {
             <div className="card-details__background" onClick={() => selectCard(activeCardKey)}>
               <div className="card-details__content" onClick={(e) => e.stopPropagation()}>
                 <div className="close_container">
-                  <div className="close warp black"></div>
-                </div>                
+                  <div className="close warp black" onClick={() => selectCard('')}></div>
+                </div>
                 <div className="grid-card">
                   <Card cardKey={activeCardKey} selectCard={() => { }} avoidSpin={true} />
                 </div>
