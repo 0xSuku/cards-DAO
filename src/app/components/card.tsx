@@ -6,7 +6,7 @@ export default function Card(params: { cardKey: string, selectCard: Function, av
     const cardKey = params.cardKey;
     const avoidSpin = params.avoidSpin;
 
-    const onClick = () => {        
+    const onClick = () => {
         params.selectCard(cardKey);
         if (!avoidSpin) {
             setSpinIt(true);
@@ -21,7 +21,10 @@ export default function Card(params: { cardKey: string, selectCard: Function, av
             <div className="flipper">
                 <div
                     className={`card card-front`}
-                    style={{ backgroundImage: `url('../../cards/${cardKey}.jpg')` }}
+                    style={!avoidSpin
+                        ? { backgroundImage: `url('../../cards/${cardKey}_sq.webp')` }
+                        : { backgroundImage: `url('../../cards/${cardKey}.jpg')` }
+                    }
                 />
                 <div className="card card-back" />
             </div>

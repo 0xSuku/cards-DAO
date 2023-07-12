@@ -41,12 +41,21 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Fires when the document view has been scrolled
-    window.addEventListener("scroll", onScroll);
 
-    // 
-    return () => window.removeEventListener("scroll", onScroll);
+    
+    function handleEscapeKey(event: KeyboardEvent) {
+      if (event.code === 'Escape') {
+        selectCard('');
+      }
+    }
+  
+    window.addEventListener("scroll", onScroll);
+    window.removeEventListener("scroll", onScroll);
+
+    document.addEventListener('keydown', handleEscapeKey)
+    return () => document.removeEventListener('keydown', handleEscapeKey)
   }, []);
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -70,6 +79,9 @@ export default function Home() {
           <div className='card-details bg-blend-lighten'>
             <div className="card-details__background" onClick={() => selectCard(activeCardKey)}>
               <div className="card-details__content" onClick={(e) => e.stopPropagation()}>
+                <div className="close_container">
+                  <div className="close warp black"></div>
+                </div>                
                 <div className="grid-card">
                   <Card cardKey={activeCardKey} selectCard={() => { }} avoidSpin={true} />
                 </div>
