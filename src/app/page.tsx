@@ -10,17 +10,36 @@ import cardsText from '../cards-config.json';
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
   const [activeCardKey, setActiveCardKey] = useState<string>();
+  const [isMobile, setIsMobile] = useState(false);
+  const [cards, setCards] = useState<string[]>([]);
 
-  let cards: string[] = [];
-  (Object.keys(CardSuits) as Array<keyof typeof CardSuits>).forEach((suit) => {
-    cards.push(
-      ...(Object.keys(CardRanks) as Array<keyof typeof CardRanks>).map((rank) => {
-        const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
+  const setCardsByRanks = () => {
+    let _cards: string[] = [];
+    (Object.keys(CardSuits) as Array<keyof typeof CardSuits>).forEach((suit) => {
+      _cards.push(
+        ...(Object.keys(CardRanks) as Array<keyof typeof CardRanks>).map((rank) => {
+          const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
+  
+          return cardKey;
+        })
+      );
+    });
+    setCards(_cards);
+  }
 
-        return cardKey;
-      })
-    );
-  });
+  const setCardsBySuits = () => {
+    let _cards: string[] = [];
+    (Object.keys(CardRanks) as Array<keyof typeof CardRanks>).forEach((rank) => {
+      _cards.push(
+        ...(Object.keys(CardSuits) as Array<keyof typeof CardSuits>).map((suit) => {
+          const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
+  
+          return cardKey;
+        })
+      );
+    });
+    setCards(_cards);
+  }
 
   const selectCard = (card: string) => {
     setActiveCardKey((oldCard) => (oldCard === card ? undefined : card));
@@ -41,14 +60,27 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (isMobile) {
+      setCardsByRanks();
+    } else {
+      setCardsBySuits();
+    }
+  }, [isMobile]);
 
-
+  useEffect(() => {
+    
     function handleEscapeKey(event: KeyboardEvent) {
       if (event.code === 'Escape') {
         selectCard('');
       }
     }
 
+    //choose the screen size 
+    const handleResize = () => {
+      window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
+    }
+
+    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", onScroll);
     window.removeEventListener("scroll", onScroll);
 
@@ -65,7 +97,7 @@ export default function Home() {
           style={{ width: `${scrollTop}%` }}
         ></div>
       </div>
-      <div className="grid max-[600px]:grid-cols-1 grid-cols-3 md:grid-cols-4 max-[600px]:gap-6 gap-8 cards">
+      <div className="grid max-[720px]:grid-cols-1 grid-cols-4 max-[720px]:gap-6 gap-8 cards">
         {
           cards.map((card) => (
             <div key={card} className="grid-card">
@@ -73,6 +105,9 @@ export default function Home() {
             </div>
           ))
         }
+      </div>
+      <div className="footer">
+      <a href="https://www.daocraft.cx/" target="_blank"><img src="images/DAOcraft_wordmark.png" loading="lazy" /></a>
       </div>
       {
         activeCardKey && (
