@@ -206,5 +206,13 @@
     "king_spades": {
       "title": "Futarchy",
       "description": "A governance mechanism where decisions are made based on the outcome of prediction markets."
+    },
+    "joker_black": {
+      "title": "Joker Black",
+      "description": "Placeholder"
+    },
+    "joker_red": {
+      "title": "Joker Red",
+      "description": "Placeholder"
     }
   }

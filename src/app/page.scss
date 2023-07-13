@@ -107,6 +107,7 @@ main {
           color: #a0a0a0;
           font-family: 'Hind', sans-serif;
           overflow-y: auto;
+          padding-bottom: 1px; /* avoid scrollbar */
         }
       }
 
@@ -234,7 +235,10 @@ main {
 }
 
 .grid {
-  padding-bottom: 30px;
+
+  &.jokers {
+    padding-bottom: 30px;
+  }
 
   .card:before {
     background-position: 50% 50%;
@@ -291,6 +295,11 @@ main {
     opacity: .88;
     filter: brightness(.66) contrast(1.33);
     transition: none;
+  }
+
+  &::after {
+    content: "";
+    flex: auto;
   }
 }
 
@@ -388,7 +397,10 @@ main {
 }
 
 .cards {
-  padding-top: 5vh;
+
+  &:not(.jokers) {
+    padding-top: 5vh;
+  }
 
   .card {
     &:nth-child(2) {

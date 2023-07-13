@@ -12,6 +12,7 @@ export default function Home() {
   const [activeCardKey, setActiveCardKey] = useState<string>();
   const [isMobile, setIsMobile] = useState(false);
   const [cards, setCards] = useState<string[]>([]);
+  const [jokers, setJokers] = useState<string[]>([]);
 
   const setCardsByRanks = () => {
     let _cards: string[] = [];
@@ -25,6 +26,7 @@ export default function Home() {
       );
     });
     setCards(_cards);
+    setJokers(['joker_black', 'joker_red']);
   }
 
   const setCardsBySuits = () => {
@@ -39,6 +41,7 @@ export default function Home() {
       );
     });
     setCards(_cards);
+    setJokers(['joker_black', 'joker_red']);
   }
 
   const selectCard = (card: string) => {
@@ -102,6 +105,15 @@ export default function Home() {
           cards.map((card) => (
             <div key={card} className="grid-card">
               <Card cardKey={card} selectCard={selectCard} />
+            </div>
+          ))
+        }
+      </div>
+      <div className="grid max-[720px]:grid-cols-1 grid-cols-2 max-[720px]:gap-6 gap-8 cards jokers">
+        {
+          jokers.map((joker) => (
+            <div key={joker} className="grid-card">
+              <Card cardKey={joker} selectCard={selectCard} />
             </div>
           ))
         }
