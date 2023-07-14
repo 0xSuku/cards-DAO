@@ -72,7 +72,6 @@ export default function Home() {
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", onScroll);
-    window.removeEventListener("scroll", onScroll);
 
     document.addEventListener('keydown', handleEscapeKey)
     return () => document.removeEventListener('keydown', handleEscapeKey)

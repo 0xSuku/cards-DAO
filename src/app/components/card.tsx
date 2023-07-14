@@ -23,7 +23,7 @@ export default function Card(params: { cardKey: string, selectCard: Function, av
             return;
         }
         const touchCurrentY = e.touches[0].clientY;
-        document.documentElement.scrollTop = document.documentElement.scrollTop + (touchStartY - touchCurrentY);
+        document.documentElement.scrollTop = document.documentElement.scrollTop + (touchStartY - touchCurrentY) * 2;
         touchStartY = e.touches[0].clientY;
     }
 
