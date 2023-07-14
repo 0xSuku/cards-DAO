@@ -5,6 +5,7 @@ export default function Card(params: { cardKey: string, selectCard: Function, av
     const [spinIt, setSpinIt] = useState(false);
     const cardKey = params.cardKey;
     const avoidSpin = params.avoidSpin;
+    let touchStartY: number | undefined;
 
     const onClick = () => {
         params.selectCard(cardKey);
@@ -16,8 +17,22 @@ export default function Card(params: { cardKey: string, selectCard: Function, av
         }
     }
 
+    const onTouchMove = (e: any) => {
+        if (!touchStartY) {
+            touchStartY = e.touches[0].clientY;
+            return;
+        }
+        const touchCurrentY = e.touches[0].clientY;
+        document.documentElement.scrollTop = document.documentElement.scrollTop + (touchStartY - touchCurrentY);
+        touchStartY = e.touches[0].clientY;
+    }
+
+    const onTouchEnd = (e: any) => {
+        touchStartY = undefined;
+    }
+
     return (
-        <div className={`card-container ${spinIt ? 'spin' : ''}`} onClick={onClick}>
+        <div className={`card-container ${spinIt ? 'spin' : ''}`} onClick={onClick} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <div className="flipper">
                 <div
                     className={`card card-front`}

@@ -20,7 +20,7 @@ export default function Home() {
       _cards.push(
         ...(Object.keys(CardRanks) as Array<keyof typeof CardRanks>).map((rank) => {
           const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
-  
+
           return cardKey;
         })
       );
@@ -35,7 +35,7 @@ export default function Home() {
       _cards.push(
         ...(Object.keys(CardSuits) as Array<keyof typeof CardSuits>).map((suit) => {
           const cardKey = rank.toLowerCase() + '_' + suit.toLowerCase();
-  
+
           return cardKey;
         })
       );
@@ -48,40 +48,27 @@ export default function Home() {
     setActiveCardKey((oldCard) => (oldCard === card ? undefined : card));
   }
 
-  const onScroll = () => {
-    // This will calculate how many pixels the page is vertically
-    const winScroll = document.documentElement.scrollTop;
-    // This is responsible for subtracticing the total height of the page - where the users page is scrolled to
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-
-    // This will calculate the final total of the percentage of how much the user has scrolled.
-    const scrolled = (winScroll / height) * 100;
-
-    setScrollTop(scrolled);
-  };
-
   useEffect(() => {
-    if (isMobile) {
-      setCardsByRanks();
-    } else {
-      setCardsBySuits();
-    }
-  }, [isMobile]);
-
-  useEffect(() => {
-    
     function handleEscapeKey(event: KeyboardEvent) {
       if (event.code === 'Escape') {
         selectCard('');
       }
     }
 
-    //choose the screen size 
     const handleResize = () => {
       window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
     }
+
+    const onScroll = () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const scrolled = (winScroll / height) * 100;
+
+      setScrollTop(scrolled);
+    };
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", onScroll);
@@ -90,6 +77,14 @@ export default function Home() {
     document.addEventListener('keydown', handleEscapeKey)
     return () => document.removeEventListener('keydown', handleEscapeKey)
   }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setCardsByRanks();
+    } else {
+      setCardsBySuits();
+    }
+  }, [isMobile]);
 
 
   return (
@@ -119,7 +114,7 @@ export default function Home() {
         }
       </div>
       <div className="footer">
-      <a href="https://www.daocraft.cx/" target="_blank"><img src="images/DAOcraft_wordmark.png" loading="lazy" /></a>
+        <a href="https://www.daocraft.cx/" target="_blank"><img src="images/DAOcraft_wordmark.png" loading="lazy" /></a>
       </div>
       {
         activeCardKey && (
